@@ -29,6 +29,7 @@ body{
 main{
   border: 1px solid blue;
   min-height: 100vh;
+  padding: 45px 20px 0 20px;
 }
 
 .top{
@@ -44,29 +45,17 @@ main{
 h1{
   padding: 0;
   margin: 0;
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 400;
   color: var(--Very-Dark-Blue);
 }
 
 .top h1:nth-of-type(1){
-  font-size: 35px;
   font-weight: 200;
   color: var(--Grayish-Blue);
 }
 
 .top p {
   border: 1px solid red;
-  max-width: 42%;
-  padding: 0 0 0 0;
-  margin: 20px 0 50px 0;
-}
-
-.grid-container{
-  border: 1px solid green;
-  max-height: 100vh;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+  margin: 20px 0 0 0;
 }
