@@ -23,12 +23,10 @@
 body{
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 
 main{
   border: 1px solid blue;
-  min-height: 100vh;
   padding: 45px 20px 50px 20px;
 }
 
@@ -66,7 +64,6 @@ h1{
   border-radius: 10px;
   box-shadow: 0px 3px 14px 4px rgba(0,0,0,0.24);
   padding: 20px 15px 20px 25px;
-  /* height: 350px; */
   display: flex;
   flex-direction: column;
 }
@@ -76,40 +73,42 @@ h1{
 .grid-container{
   border: 1px solid red;
   display: grid;
-  /* grid-gap: 25px; */
-  /* grid-template-columns: repeat(auto-fit, minmax(200px, 300px)); */
-  grid-template-columns: repeat(auto-fit, 300px);
-  /* grid-template-rows: auto auto auto; */
-  grid-template-rows: repeat(40, 30px);
+  grid-gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 330px));
+  /* grid-template-rows: repeat(40, 30px); */
+  grid-template-rows: 1fr 1fr;
   justify-content: center;
 }
 
 .one:nth-of-type(1){
   grid-column: 1;
-  grid-row: 5 / 9;
-  height: 150px;
+  grid-row: 1 / span 2;
+  height: 155px;
+  margin-top: 140px;
 }
 
 .one:nth-of-type(2){
-  grid-column: 2;
-  grid-row: 1;
-  height: 150px;
+grid-column: 2;
+}
 
+.one:nth-of-type(4) p{
+  margin-bottom: 15px;
 }
 
 .one:nth-of-type(3){
-  grid-column: 3;
-  grid-row: 5 / 9;
-  height: 150px;
-
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .one:nth-of-type(4){
-  grid-column: 2;
-  grid-row: 9 / 13;
-  height: 150px;
-
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  height: 155px;
+  margin-top: 140px;
 }
+
+
+
 
 .one h2{
   font-weight: 400;
@@ -119,10 +118,44 @@ h1{
 
 .one p{
   font-size: 15px;
+  margin-bottom: 25px;
 }
 
 .one img{
   width: 18%;
   align-self: flex-end;
-  margin-top: 25px;
+  /* margin-top: 25px; */
 }
+
+@media screen and (max-width: 800px) {
+  .grid-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .one{
+    display: flex;
+    width: 250px;
+    height: 180px;
+  }
+
+  .one:nth-of-type(1){
+    margin-top: 0;
+  }
+
+  .one:nth-of-type(2) p {
+    margin-bottom: 5px;
+  }
+
+  .one:nth-of-type(2){
+    height: 155px;
+  }
+
+  .one:nth-of-type(4){
+    margin-top: 0;
+  }
+}
+
+/* FLEXBOX WAS A TEST BUT TRY AGAIN WITH GRID RESPONSIVE LAYOUT */
